@@ -10,6 +10,7 @@ sudo singularity build image_name.simg recipes/image_name.def
 
 ## Available recipes
 
-| Recipe name         | Description                                          |
+| Recipe              | Description                                          |
 |---------------------|------------------------------------------------------|
+| sratools            | NCBI SRA Tools                                       |
 | rnaseq              | Tools for basic RNA-Seq analysis                     |
