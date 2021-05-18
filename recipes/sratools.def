@@ -12,7 +12,7 @@ From: ubuntu:18.04
 	conda config --env --add channels defaults
 	conda config --env --add channels bioconda
 	conda config --env --add channels conda-forge
-	conda install --yes --quiet sra-tools
+	conda install --yes --quiet ncbi-ngs-sdk sra-tools
 	conda deactivate
 
 %environment
