@@ -1,0 +1,21 @@
+BootStrap: docker
+From: ubuntu:18.04
+
+%post
+	apt-get -y update
+	apt-get -y install wget
+	wget -O /opt/Miniconda3-latest-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+	sh /opt/Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda
+	rm -f /opt/Miniconda3-latest-Linux-x86_64.sh
+	. /opt/conda/bin/activate
+	conda update --all --yes --quiet
+	conda config --env --add channels defaults
+	conda config --env --add channels bioconda
+	conda config --env --add channels conda-forge
+	conda install --yes --quiet kallisto bustools
+	conda deactivate
+	wget -O /opt/featuremap.py https://raw.githubusercontent.com/pachterlab/kite/master/featuremap/featuremap.py
+
+%environment
+    export PATH=/opt/conda/bin:$PATH
+
